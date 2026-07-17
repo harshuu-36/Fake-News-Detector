@@ -130,5 +130,4 @@ See the full deploy guide (Streamlit Community Cloud, Hugging Face Spaces, Rende
 
 **Harsh Yadav**
 
-👨‍💻 Author
-Harsh Yadav
+
