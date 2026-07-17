@@ -9,6 +9,7 @@ as a demo/starter corpus. Accuracy numbers here are illustrative,
 not production-grade. Swap in a larger labeled dataset (e.g. LIAR,
 FakeNewsNet, Kaggle Fake-and-Real-News) for real-world use.
 """
+import glob
 import json
 import os
 
@@ -33,9 +34,22 @@ def _headline_column(df):
     raise ValueError("Input files must contain a headline column named 'headline', 'title', or 'text'.")
 
 
+def _find_data_file(prefix):
+    candidates = glob.glob(os.path.join(DATA_DIR, f"{prefix}*.csv"))
+    if not candidates:
+        raise FileNotFoundError(
+            f"Could not find a {prefix} CSV in {DATA_DIR}. "
+            f"Expected names like '{prefix}.csv' or '{prefix} (1).csv'."
+        )
+    return max(candidates, key=os.path.getmtime)
+
+
 def load_data():
-    real = pd.read_csv(os.path.join(DATA_DIR, "real_news.csv"))
-    fake = pd.read_csv(os.path.join(DATA_DIR, "fake_news.csv"))
+    real_path = _find_data_file("real_news")
+    fake_path = _find_data_file("fake_news")
+
+    real = pd.read_csv(real_path)
+    fake = pd.read_csv(fake_path)
 
     real["headline"] = _headline_column(real)
     fake["headline"] = _headline_column(fake)

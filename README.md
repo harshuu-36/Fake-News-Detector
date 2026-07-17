@@ -42,8 +42,8 @@ The Fake News Detection Dashboard is designed to identify misleading news articl
 fake-news-detector/
 │
 ├── data/
-│   ├── real_news.csv
-│   └── fake_news.csv
+│   ├── real_news.csv  # or real_news (1).csv
+│   └── fake_news.csv  # or fake_news (1).csv
 │
 ├── model/
 │   ├── fake_news_model.joblib

@@ -1,0 +1,36 @@
+{
+  "fake_signals": [
+    "leaked",
+    "shocking",
+    "exposed",
+    "breaking",
+    "secretly",
+    "secret",
+    "believe",
+    "insiders",
+    "won",
+    "hoax",
+    "reveal",
+    "conspiracy",
+    "claims",
+    "known",
+    "famous"
+  ],
+  "real_signals": [
+    "report",
+    "outlines",
+    "public",
+    "department",
+    "county",
+    "team",
+    "local",
+    "announced",
+    "released",
+    "new",
+    "updated",
+    "began",
+    "wins",
+    "board",
+    "program"
+  ]
+}
